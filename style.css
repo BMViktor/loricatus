@@ -1,0 +1,257 @@
+/* RESET */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --bg-dark: #0d1117;
+  --bg-panel: #161b22;
+  --accent: #00b4ff;
+  --accent-soft: #0090cc;
+  --text-light: #e6e6e6;
+  --text-muted: #9aa0a6;
+  --container: 1200px;
+  --radius: 10px;
+  --shadow: 0 0 25px rgba(0, 180, 255, 0.15);
+}
+
+html, body {
+  height: 100%;
+  background: var(--bg-dark);
+  color: var(--text-light);
+  font-family: "Segoe UI", Roboto, sans-serif;
+  line-height: 1.6;
+}
+
+/* ===========================
+   NAVBAR
+=========================== */
+.nav {
+  width: 100%;
+  padding: 20px 8%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(13, 17, 23, 0.7);
+  backdrop-filter: blur(6px);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.logo {
+  width: 80px;
+  height: auto;
+}
+
+.navig {
+  display: flex;
+  gap: 40px;
+}
+
+.navig a {
+  color: var(--text-light);
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: color .25s;
+}
+
+.navig a:hover {
+  color: var(--accent);
+}
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+.hamburger span {
+  display: block;
+  width: 28px;
+  height: 3px;
+  background: var(--accent);
+  margin: 5px 0;
+  transition: .35s;
+}
+
+/* ===========================
+   HERO + VIDEO
+=========================== */
+.video-section {
+  position: relative;
+  width: 100%;
+  height: 70vh;
+  overflow: hidden;
+}
+
+.hero-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.55);
+}
+
+.video-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: var(--text-light);
+  padding: 20px;
+}
+
+.video-overlay h1 {
+  font-size: 64px;
+  font-weight: 800;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.video-overlay p {
+  margin-top: 12px;
+  font-size: 20px;
+  color: var(--text-muted);
+}
+
+/* ===========================
+   BUTTONS
+=========================== */
+.btn {
+  display: inline-block;
+  margin-top: 24px;
+  padding: 12px 32px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 700;
+  transition: .25s;
+}
+
+.btn.primary {
+  background: var(--accent);
+  color: #000;
+  box-shadow: var(--shadow);
+}
+.btn.primary:hover {
+  background: var(--accent-soft);
+}
+
+/* ===========================
+   SZOLGÁLTATÁSOK
+=========================== */
+.section {
+  padding: 80px 0;
+}
+
+.container {
+  width: 92%;
+  max-width: var(--container);
+  margin: 0 auto;
+}
+
+.section h2 {
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 40px;
+  color: var(--accent);
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.service-card {
+  background: var(--bg-panel);
+  padding: 28px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  transition: transform .25s;
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+}
+
+.service-card h3 {
+  color: var(--accent);
+  margin-bottom: 12px;
+}
+
+/* ===========================
+   TECHNOLÓGIA
+=========================== */
+.tech-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.tech-item {
+  background: var(--bg-panel);
+  padding: 24px;
+  border-radius: var(--radius);
+  border-left: 4px solid var(--accent);
+}
+
+/* ===========================
+   PROJEKTEK
+=========================== */
+.project-card {
+  background: var(--bg-panel);
+  padding: 20px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.project-card img {
+  width: 100%;
+  border-radius: var(--radius);
+  margin-bottom: 12px;
+}
+
+/* ===========================
+   FOOTER
+=========================== */
+.footer {
+  background: #0b0e12;
+  padding: 40px 0;
+  margin-top: 60px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.footer h4 {
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+
+.footer p {
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+/* ===========================
+   MOBIL
+=========================== */
+@media (max-width: 900px) {
+  .service-grid,
+  .tech-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .navig {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+  }
+}
